@@ -1,0 +1,5 @@
+\newcommand{\name}{Your Name}
+\newcommand{\phone}{555-555-5555}
+\newcommand{\email}{you@example.com}
+\newcommand{\linkedin}{linkedin.com/in/yourname}
+\newcommand{\githubhandle}{github.com/yourname}
