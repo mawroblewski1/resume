@@ -1,0 +1,76 @@
+\documentclass[10.5pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{parskip}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% Section header: bold title, then a rule BELOW with positive space,
+% so the rule never collides with the text baseline.
+\titleformat{\section}{\bfseries\large}{}{0pt}{}[{\vspace{2pt}\titlerule}]
+\titlespacing{\section}{0pt}{10pt}{6pt}
+
+\newcommand{\entry}[2]{\textbf{#1} \hfill #2\\}
+\setlist[itemize]{leftmargin=16pt, itemsep=1pt, topsep=2pt, parsep=0pt, partopsep=0pt, before=\vspace*{-\parskip}\vspace*{-8pt}}
+
+% contact.tex (gitignored, not committed) should define:
+%   \name{...} \phone{...} \email{...} \linkedin{...} \githubhandle{...}
+% A tracked contact.tex.example should provide placeholder values
+% so the repo still compiles for anyone who clones it.
+\input{contact}
+
+\begin{document}
+
+\begin{center}
+{\LARGE \textbf{\name}}\\[2pt]
+\phone\ \textbar\ \href{mailto:\email}{\email}\ \textbar\ \href{https://\linkedin}{\linkedin}\ \textbar\ \href{https://\githubhandle}{\githubhandle}
+\end{center}
+
+\section*{Education}
+\entry{University of California, Davis}{Expected Dec. 2026}
+Bachelor of Science in Computer Science, Minor in Statistics, Minor in Music\\
+GPA 3.98 \textbar\ University Honors Program \textbar\ Dean's Honor List, 6 Quarters
+
+\textbf{Relevant Coursework:} Recommender Systems, Stochastic Processes, Mathematical Statistics, Probability Theory, Time Series Analysis, Linear Regression, Analysis of Variance, Intermediate Macroeconomic Theory, Database Systems, Algorithm Design \& Analysis, Computer Vision
+
+\section*{Technical Proficiencies}
+\textbf{Languages:} Python, R, SQL, C++, Go, Lua, MATLAB\\
+\textbf{ML/Data:} NumPy, Pandas, ChromaDB (vector retrieval), sentence-transformers, Ollama/LLM APIs, ggplot2, Tableau\\
+\textbf{Tools:} Git, RStudio, Jupyter, CMake, Linux
+
+\section*{Research \& Projects}
+
+\entry{Reproducibility Prediction for Software Defect Datasets --- BugSwarm, UC Davis}{Aug. 2023 -- Present}
+\begin{itemize}
+  \item Designed and built a pipeline component that parses Maven dependency configurations to predict build reproducibility before costly re-execution, reducing wasted computational effort in an NSF-funded research infrastructure.
+  \item Fit quasibinomial GLMs with polynomial basis expansion across 50 real-world repositories, identifying a statistically significant nonlinear relationship between dependency versioning rate and reproducibility ($p < 0.001$).
+  \item Applied loess cross-validation and cost-sensitive threshold selection to guard against overfitting and justify classification cutoffs under asymmetric error costs.
+\end{itemize}
+
+\entry{Interrogagents: Multi-Agent Stance Change System --- ECS 172, UC Davis}{Mar. 2026 -- Jun. 2026}
+\begin{itemize}
+  \item Built a three-role LLM agent architecture (Suspect, Interrogator, Judge) with a two-channel retrieval-augmented recommender that selects communication techniques and grounded arguments at each conversational turn.
+  \item Designed a quad-structured controlled experiment (direction-matched treatment/control pairs) across 80 trial legs, finding 75\% vs.\ 35\% directional accuracy for guided vs.\ unguided dialogue ($p < 0.001$).
+  \item Identified and documented key methodological limitations (evaluator circularity, technique/argument confound) to scope valid claims. \href{https://github.com/mawroblewski1/interrogating-agents}{[Code]} \textbar\ \href{https://github.com/mawroblewski1/interrogating-agents/blob/main/papers/project_report.pdf}{[Report]}
+\end{itemize}
+
+\entry{CowabungaDB: Multi-threaded HTAP Database Engine --- ECS 165A, UC Davis}{Jan. 2024 -- Mar. 2024}
+\begin{itemize}
+  \item Developed a multi-threaded hybrid transactional/analytical database in Rust with Python bindings; led design discussions on indexing and transaction consistency.
+  \item Placed 1st of 26 teams; recognized by Prof. Mohammad Sadoghi. \href{https://github.com/GeorgeBerdovskiy/cowabunga}{[Code]}
+\end{itemize}
+
+\section*{Teaching}
+\entry{CalTeach/MAST \& CS Tutoring, UC Davis}{Apr. 2023 -- Feb. 2025}
+\begin{itemize}
+  \item Delivered instruction and exam preparation in AP Statistics and Integrated Mathematics classrooms (50+ hours) and biweekly Discrete Math/Algorithms tutoring sessions for CS undergraduates.
+\end{itemize}
+
+\section*{Personal Interests}
+Comparative linguistics, social physics, video game mechanics, nature photography.\\
+\textbf{Languages:} Fluent in Polish (Native, Seal of Biliteracy); Conversational Spanish (Seal of Biliteracy)
+
+\end{document}
