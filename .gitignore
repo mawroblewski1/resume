@@ -1,0 +1,8 @@
+   build/
+   contact.tex
+   *.aux
+   *.log
+   *.out
+   *.fls
+   *.fdb_latexmk
+   *.synctex.gz
